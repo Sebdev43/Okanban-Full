@@ -1,0 +1,6 @@
+[submodule "okanban-front"]
+	path = okanban-front
+	url = git@github.com:Sebdev43/Okanban-Front.git
+[submodule "okanban-back"]
+	path = okanban-back
+	url = git@github.com:Sebdev43/Okanban-back.git
