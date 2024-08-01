@@ -6,12 +6,30 @@ Okanban est une application inspirée de Trello, conçue pour offrir une gestion
 
 ## Fonctionnalités principales
 
-- Création de listes : Les utilisateurs peuvent créer autant de listes qu'ils le souhaitent. Chaque liste dispose d'un nom unique pour faciliter l'organisation.
-- Création de cartes : Chaque liste peut contenir plusieurs cartes. Une carte dispose des propriétés suivantes :
-  - Titre : Un titre descriptif pour la carte.
-  - Position : La position de la carte au sein de la liste, permettant de les ordonner.
-  - Couleur (optionnelle) : Une couleur personnalisée pour identifier visuellement les cartes.
-  - Labels (optionnels) : Un ou plusieurs labels pour catégoriser les cartes.
+- Gestion des utilisateurs : Enregistrement, connexion et gestion des utilisateurs.
+- Gestion des cartes : Création, modification, suppression et réorganisation des cartes dans les listes.
+- Gestion des tags : Création, modification et suppression des tags, ainsi que l'association des tags aux cartes.
+- Drag and Drop : Déplacement des cartes et des listes via une interface glisser-déposer intuitive.
+- Authentification et Sécurité : Utilisation de tokens CSRF pour sécuriser les requêtes, gestion des sessions avec Sequelize.
+
+## Technologies utilisées
+
+### Frontend
+
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![Bulma](https://img.shields.io/badge/-Bulma-00D1B2?style=flat&logo=bulma&logoColor=white)
+![FontAwesome](https://img.shields.io/badge/-Font%20Awesome-339AF0?style=flat&logo=font-awesome&logoColor=white)
+
+### Backend
+
+![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/-Express-000000?style=flat&logo=express&logoColor=white)
+![Sequelize](https://img.shields.io/badge/-Sequelize-52B0E7?style=flat&logo=sequelize&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-336791?style=flat&logo=postgresql&logoColor=white)
+![CSRF Token](https://img.shields.io/badge/-CSRF_Token-000000?style=flat&logo=json-web-tokens&logoColor=white)
+![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
 ## Modèle Logique de Données (MLD)
 
@@ -53,8 +71,61 @@ Le MLD de l'application Okanban est structuré autour de trois entités principa
 
 ## Configuration et Déploiement
 
-Pour déployer l'application, Docker Compose est utilisé pour orchestrer les services nécessaires, notamment PostgreSQL pour la base de données et Node.js pour l'application.
+Pour déployer l'application, Docker Compose est utilisé pour orchestrer les services nécessaires, notamment PostgreSQL pour la base de données et Node.js pour l'application Back.
+
+### Prérequis
+
+- Docker
+- Docker Compose
+
+### Configuration
+
+1. Clonez le dépôt :
 
 ```bash
-docker compose up
+git clone https://github.com/Sebdev43/Okanban-Full.git
+cd Okanban-Full
+```
+
+2. Configuration du backend :
+
+```bash
+cd okanban-back
+mv .env.example .env
+```
+
+3. Lancez Docker Compose pour démarrer les services :
+
+```bash
+docker-compose up -d
+```
+
+4. Configuration du frontend :
+
+Ouvrez un nouveau terminal, puis exécutez :
+
+```bash
+cd okanban-front
+npm install
+npm start
+```
+
+5. L'API sera disponible à l'adresse suivante :
+
+```bash
+http://localhost:5000
+```
+
+6. Le frontend sera disponible à l'adresse suivante :
+
+```bash
+http://localhost:5173
+```
+
+7. Arrêt des services
+
+Pour arrêter les services Docker, exécutez :
+
+```bash
+docker-compose down
 ```
