@@ -7,7 +7,7 @@ Okanban est une application inspirée de Trello, conçue pour offrir une gestion
 ## Fonctionnalités principales :
 
 - Gestion des utilisateurs : Enregistrement, connexion.
-- - Gestion des listes : Création, modification, suppression
+- Gestion des listes : Création, modification, suppression
 - Gestion des cartes : Création, modification, suppression et réorganisation des cartes dans les listes.
 - Gestion des tags : Création, modification et suppression des tags, ainsi que l'association des tags aux cartes.
 - Drag and Drop : Déplacement des cartes et des listes via une interface glisser-déposer intuitive.
